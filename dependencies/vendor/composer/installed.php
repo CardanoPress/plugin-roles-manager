@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '4ab3e2ab09fccbecb65ecc7fe48766580e0da3f5',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '4ab3e2ab09fccbecb65ecc7fe48766580e0da3f5',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'automattic/jetpack-autoloader' => array(
+            'pretty_version' => 'v2.11.18',
+            'version' => '2.11.18.0',
+            'reference' => '53cbf0528fa6931c4fa6465bccd37514f9eda720',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/../automattic/jetpack-autoloader',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'cardanopress/framework' => array(
+            'pretty_version' => 'v2.1.0',
+            'version' => '2.1.0.0',
+            'reference' => 'e9a51159237227bcc2904360586a4b4c9a2d7b65',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../cardanopress/framework',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

@@ -1,0 +1,43 @@
+{
+  "config": {
+    "optimize-autoloader": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^7.4|^8.0",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.4",
+    "themeplate/core": "^2.0",
+    "themeplate/enqueue": "^2.1",
+    "themeplate/logger": "^1.3",
+    "themeplate/meta": "^2.2",
+    "themeplate/page": "^2.0",
+    "themeplate/settings": "^2.0"
+  },
+  "require-dev": {
+    "coenjacobs/mozart": "^0.7.1"
+  },
+  "extra": {
+    "mozart": {
+      "dep_namespace": "CardanoPress\\Dependencies\\",
+      "dep_directory": "/",
+      "classmap_directory": "/classes/",
+      "classmap_prefix": "CardanoPress_Dependency_"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "rm -rf assets ThemePlate/assets",
+      "mv vendor/themeplate/core/assets .",
+      "mozart compose",
+      "mv assets ThemePlate"
+    ],
+    "post-update-cmd": [
+      "rm -rf assets ThemePlate/assets",
+      "mv vendor/themeplate/core/assets .",
+      "mozart compose",
+      "mv assets ThemePlate"
+    ]
+  }
+}
