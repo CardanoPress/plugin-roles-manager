@@ -1,0 +1,11 @@
+parameters:
+  level: 5
+  excludePaths:
+    - vendor
+  scanFiles:
+    - cardanopress-roles-manager.php
+  scanDirectories:
+    - %currentWorkingDirectory%/.cache/wordpress
+    - %currentWorkingDirectory%/.cache/wordpress-tests-lib
+  dynamicConstantNames:
+    - CP_ROLES_MANAGER_FILE

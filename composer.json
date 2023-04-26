@@ -1,0 +1,53 @@
+{
+  "name": "cardanopress/plugin-roles-manager",
+  "description": "A CardanoPress extension for managing roles and capabilities",
+  "type": "wordpress-plugin",
+  "keywords": [
+    "generator-themeplate",
+    "themeplate",
+    "wordpress",
+    "plugin",
+    "cardanopress"
+  ],
+  "license": "GPL-2.0-only",
+  "authors": [
+    {
+      "name": "Gene Alyson Fortunado Torcende",
+      "email": "mail@pbwebdev.com",
+      "homepage": "https://pbwebdev.com"
+    }
+  ],
+  "config": {
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "php": "^7.4|^8.0"
+  },
+  "require-dev": {
+    "coenjacobs/mozart": "^0.7.1",
+    "themeplate/tester": "^2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "CardanoPress\\RolesManager\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "analyse": "themeplate analyse",
+    "lint": "themeplate lint",
+    "fix": "themeplate fix",
+    "test": "themeplate test",
+    "test:unit": "themeplate test --type unit",
+    "test:integration": "themeplate test --type integration"
+  }
+}
