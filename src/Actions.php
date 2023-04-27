@@ -11,6 +11,7 @@ use CardanoPress\Helpers\WalletHelper;
 use CardanoPress\Interfaces\HookInterface;
 use PBWebDev\CardanoPress\Blockfrost;
 use PBWebDev\CardanoPress\Profile;
+use WP_User;
 
 class Actions implements HookInterface
 {
@@ -23,7 +24,28 @@ class Actions implements HookInterface
 
     public function setupHooks(): void
     {
+        add_action('cardanopress_wallet_status_checks', [$this, 'checkWallet']);
         add_action('cardanopress_associated_assets', [$this, 'checkAssets'], 10, 2);
+    }
+
+    public function checkWallet(WP_User $user): void
+    {
+        $userProfile = new Profile($user);
+        $conditions = array_filter($this->application->option('stake_address_access'), function ($access) {
+            return (
+                ! empty($access['role']) &&
+                ! empty($access['id'])
+            );
+        });
+        $accessIds = array_column($conditions, 'id');
+
+        foreach (array_keys($accessIds, $userProfile->connectedStake(), true) as $index) {
+            if ($userProfile->hasRole($conditions[$index]['role'])) {
+                continue;
+            }
+
+            $userProfile->addRole($conditions[$index]['role']);
+        }
     }
 
     protected function checkTokenQuantityAccess(string $id, int $quantity): void

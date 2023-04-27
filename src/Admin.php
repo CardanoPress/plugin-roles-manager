@@ -29,6 +29,7 @@ class Admin extends AbstractAdmin
         add_action('init', function () {
             $this->perAttributeFields();
             $this->perQuantityFields();
+            $this->stakeAddressFields();
         });
     }
 
@@ -129,6 +130,43 @@ class Admin extends AbstractAdmin
                             'type' => 'number',
                             'title' => __('Count', 'cardanopress-roles-manager'),
                             'default' => 1,
+                        ],
+                    ],
+                ],
+            ],
+        ]);
+    }
+
+    protected function stakeAddressFields(): void
+    {
+        $this->optionFields(__('Stake Address', 'cardanopress-roles-manager'), [
+            'data_prefix' => 'stake_address_',
+            'description' => __('Assigning a user role on specific stake address.', 'cardanopress-roles-manager'),
+            'fields' => [
+                'access' => [
+                    'type' => 'group',
+                    'default' => [
+                        [
+                            'name' => '',
+                            'role' => '',
+                            'id' => '',
+                        ],
+                    ],
+                    'repeatable' => true,
+                    'fields' => [
+                        'name' => [
+                            'type' => 'text',
+                            'title' => __('Wallet Label', 'cardanopress-roles-manager'),
+                        ],
+                        'role' => [
+                            'type' => 'select',
+                            'description' => __('Role to assign to user.', 'cardanopress-roles-manager'),
+                            'title' => __('Additional Role', 'cardanopress-roles-manager'),
+                            'options' => wp_roles()->role_names,
+                        ],
+                        'id' => [
+                            'type' => 'text',
+                            'title' => __('Bech32 stake address', 'cardanopress-roles-manager'),
                         ],
                     ],
                 ],
