@@ -56,6 +56,7 @@ class Actions implements HookInterface
         $conditions = array_filter($this->application->option('token_attribute_access'), function ($access) {
             return (
                 ! empty($access['role']) &&
+                ! empty($access['id']) &&
                 ! empty($access['location']) &&
                 ! empty($access['key']) &&
                 ! empty($access['value'])
@@ -73,6 +74,10 @@ class Actions implements HookInterface
 
     protected function tokenConditionMet(array $asset, array $condition): bool
     {
+        if ($asset['policy_id'] !== $condition['id']) {
+            return false;
+        }
+
         $data = $asset[$condition['location']];
 
         if (empty($data[$condition['key']])) {

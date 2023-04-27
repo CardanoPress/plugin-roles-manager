@@ -44,6 +44,7 @@ class Admin extends AbstractAdmin
                         [
                             'name' => '',
                             'role' => '',
+                            'id' => '',
                             'location' => '',
                             'key' => '',
                             'value' => '',
@@ -62,6 +63,11 @@ class Admin extends AbstractAdmin
                             'description' => __('Role to assign to user.', 'cardanopress-roles-manager'),
                             'title' => __('Additional Role', 'cardanopress-roles-manager'),
                             'options' => wp_roles()->role_names,
+                        ],
+                        'id' => [
+                            'type' => 'text',
+                            'description' => __('Policy ID of the token.', 'cardanopress-roles-manager'),
+                            'title' => __('Policy ID', 'cardanopress-roles-manager'),
                         ],
                         'location' => [
                             'type' => 'radio',
