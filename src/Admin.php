@@ -122,7 +122,8 @@ class Admin extends AbstractAdmin
                         ],
                         'id' => [
                             'type' => 'text',
-                            'title' => __('Asset ID', 'cardanopress-roles-manager'),
+                            'description' => __('Hex-encoded asset full name.', 'cardanopress-roles-manager'),
+                            'title' => __('Asset Unit', 'cardanopress-roles-manager'),
                         ],
                         'count' => [
                             'type' => 'number',
