@@ -10,4 +10,8 @@ return array(
 		'version' => '2.1.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/dependencies/compatibility.php'
 	),
+	'e2fb8214a7589690aae8ec82f7aa8973' => array(
+		'version' => '2.2.0.0',
+		'path'    => $vendorDir . '/kermage/external-update-manager/class-external-update-manager.php'
+	),
 );

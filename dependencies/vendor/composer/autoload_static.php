@@ -8,6 +8,7 @@ class ComposerStaticInitedcaa6d862d2d115cdea4af22c5bd0eb
 {
     public static $files = array (
         '1adb4ff695388b04d573ca23d2979f89' => __DIR__ . '/..' . '/cardanopress/framework/dependencies/compatibility.php',
+        'e2fb8214a7589690aae8ec82f7aa8973' => __DIR__ . '/..' . '/kermage/external-update-manager/class-external-update-manager.php',
     );
 
     public static $prefixLengthsPsr4 = array (

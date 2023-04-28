@@ -35,6 +35,9 @@ if (! defined('CP_ROLES_MANAGER_FILE')) {
 // Load the main plugin class
 require_once plugin_dir_path(CP_ROLES_MANAGER_FILE) . 'dependencies/vendor/autoload_packages.php';
 
+// Instantiate the updater
+EUM_Handler::run(CP_ROLES_MANAGER_FILE, 'https://raw.githubusercontent.com/CardanoPress/plugin-roles-manager/main/update-data.json');
+
 function cpRolesManager(): Application
 {
     static $application;

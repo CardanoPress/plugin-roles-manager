@@ -1342,6 +1342,14 @@ return array(
 		'version' => '2.11.18.0',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-container.php'
 	),
+	'EUM_Handler' => array(
+		'version' => 'dev-main',
+		'path'    => $vendorDir . '/kermage/external-update-manager/class-external-update-manager.php'
+	),
+	'External_Update_Manager_2_2_0' => array(
+		'version' => 'dev-main',
+		'path'    => $vendorDir . '/kermage/external-update-manager/class-external-update-manager.php'
+	),
 	'Hook_Manager' => array(
 		'version' => '2.11.18.0',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/class-hook-manager.php'
