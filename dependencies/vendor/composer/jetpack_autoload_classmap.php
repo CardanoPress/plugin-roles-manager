@@ -1286,10 +1286,6 @@ return array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/../src/Installer.php'
 	),
-	'CardanoPress\\RolesManager\\Manifest' => array(
-		'version' => 'dev-main',
-		'path'    => $baseDir . '/../src/Manifest.php'
-	),
 	'CardanoPress\\SharedBase' => array(
 		'version' => '2.1.0.0',
 		'path'    => $vendorDir . '/cardanopress/framework/src/SharedBase.php'

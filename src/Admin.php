@@ -57,7 +57,6 @@ class Admin extends AbstractAdmin
                             'type' => 'text',
                             'description' => __('Name of the token.', 'cardanopress-roles-manager'),
                             'title' => __('Asset Name', 'cardanopress-roles-manager'),
-                            'default' => 'tester'
                         ],
                         'role' => [
                             'type' => 'select',
@@ -114,7 +113,6 @@ class Admin extends AbstractAdmin
                             'type' => 'text',
                             'description' => __('Name of the token.', 'cardanopress-roles-manager'),
                             'title' => __('Asset Name', 'cardanopress-roles-manager'),
-                            'default' => 'tester'
                         ],
                         'role' => [
                             'type' => 'select',

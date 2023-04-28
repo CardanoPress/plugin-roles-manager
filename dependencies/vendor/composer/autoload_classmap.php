@@ -10,6 +10,5 @@ return array(
     'CardanoPress\\RolesManager\\Admin' => $baseDir . '/../src/Admin.php',
     'CardanoPress\\RolesManager\\Application' => $baseDir . '/../src/Application.php',
     'CardanoPress\\RolesManager\\Installer' => $baseDir . '/../src/Installer.php',
-    'CardanoPress\\RolesManager\\Manifest' => $baseDir . '/../src/Manifest.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

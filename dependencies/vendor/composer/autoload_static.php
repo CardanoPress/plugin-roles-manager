@@ -52,7 +52,6 @@ class ComposerStaticInitedcaa6d862d2d115cdea4af22c5bd0eb
         'CardanoPress\\RolesManager\\Admin' => __DIR__ . '/../..' . '/../src/Admin.php',
         'CardanoPress\\RolesManager\\Application' => __DIR__ . '/../..' . '/../src/Application.php',
         'CardanoPress\\RolesManager\\Installer' => __DIR__ . '/../..' . '/../src/Installer.php',
-        'CardanoPress\\RolesManager\\Manifest' => __DIR__ . '/../..' . '/../src/Manifest.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
