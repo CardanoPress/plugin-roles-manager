@@ -8,6 +8,7 @@
   "prefer-stable": true,
   "require": {
     "php": "^7.4|^8.0",
+    "ext-json": "*",
     "automattic/jetpack-autoloader": "^2.11",
     "cardanopress/framework": "^2.0",
     "kermage/external-update-manager": "^2.2"
