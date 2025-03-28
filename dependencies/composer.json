@@ -36,7 +36,8 @@
   "scripts": {
     "action-prefix": [
       "../vendor/bin/mozart compose",
-      "composer dump-autoload --classmap-authoritative"
+      "composer dump-autoload --classmap-authoritative",
+      "composer -d .. run index.php"
     ],
     "post-install-cmd": "@action-prefix",
     "post-update-cmd": "@action-prefix"
