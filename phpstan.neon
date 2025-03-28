@@ -1,7 +1,10 @@
 parameters:
   level: 5
   excludePaths:
-    - vendor
+    analyse:
+      - dependencies
+    analyseAndScan:
+      - vendor
   scanFiles:
     - cardanopress-roles-manager.php
   scanDirectories:

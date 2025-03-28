@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
-<ruleset name="CardanoPress">
+<ruleset
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/PHPCSStandards/PHP_CodeSniffer/master/phpcs.xsd"
+	name="CardanoPress"
+>
 	<!-- Set a description for this ruleset. -->
 	<description>The code standard rules for CardanoPress.</description>
 
@@ -18,6 +22,8 @@
 	<file>.</file>
 	<!-- Exclude the Composer Vendor directory. -->
 	<exclude-pattern>/vendor/</exclude-pattern>
+	<!-- Exclude the Tester Cache directory. -->
+	<exclude-pattern>/.cache/</exclude-pattern>
 
 	<!-- Include PHP cross-version compatibility. -->
 	<config name="testVersion" value="7.4-" />
@@ -25,10 +31,10 @@
 	<config name="minimum_supported_wp_version" value="5.9" />
 
 	<!-- Include PHP Compatibility Coding Standard. -->
-	<rule ref="PHPCompatibility" />
+	<rule ref="PHPCompatibilityWP" />
 	<rule ref="PSR12" />
 
 	<rule ref="PSR1.Methods.CamelCapsMethodName">
-		<exclude-pattern>*/tests/*</exclude-pattern>
+		<exclude-pattern>/tests/*</exclude-pattern>
 	</rule>
 </ruleset>
