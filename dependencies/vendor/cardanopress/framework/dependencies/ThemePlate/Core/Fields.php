@@ -9,7 +9,6 @@
 
 namespace CardanoPress\Dependencies\ThemePlate\Core;
 
-use CardanoPress\Dependencies\ThemePlate\Core\Helper\FieldsHelper;
 use CardanoPress\Dependencies\ThemePlate\Core\Helper\FormHelper;
 use CardanoPress\Dependencies\ThemePlate\Core\Helper\MetaHelper;
 
@@ -76,7 +75,7 @@ class Fields {
 			if ( ! empty( $field->get_config( 'title' ) ) || ! empty( $field->get_config( 'description' ) ) ) {
 				echo '<div class="field-label">';
 					echo ! empty( $field->get_config( 'title' ) ) ? '<label class="label" for="' . esc_attr( $field->get_config( 'id' ) ) . '">' . esc_html( $field->get_config( 'title' ) ) . '</label>' : '';
-					echo ! empty( $field->get_config( 'description' ) ) ? '<p class="description">' . $field->get_config( 'description' ) . '</p>' : ''; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+					echo ! empty( $field->get_config( 'description' ) ) ? '<p class="description">' . $field->get_config( 'description' ) . '</p>' : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo '</div>';
 			}
 
@@ -98,7 +97,7 @@ class Fields {
 					$this->cloner( $field, $field->clone_value(), true );
 				}
 
-				echo ! empty( $field->get_config( 'information' ) ) ? '<p class="description">' . $field->get_config( 'information' ) . '</p>' : ''; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+				echo ! empty( $field->get_config( 'information' ) ) ? '<p class="description">' . $field->get_config( 'information' ) . '</p>' : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo '</div>';
 		echo '</div>';
 		/* phpcs:enable */

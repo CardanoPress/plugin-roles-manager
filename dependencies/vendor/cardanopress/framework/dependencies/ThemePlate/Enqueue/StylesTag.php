@@ -16,14 +16,26 @@ class StylesTag extends LoaderTag {
 	// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style#attributes
 	public const ATTRIBUTES = array(
 		'as',
+		'disabled',
+		'fetchpriority',
 		'href',
 		'hreflang',
 		'imagesizes',
 		'imagesrcset',
 		'media',
 		'rel',
+		'sizes',
 		'title',
-		'noscript', // custom
+
+		// deprecated
+		'rev',
+		'type',
+
+		// non-standard
+		'target',
+
+		// custom
+		'noscript',
 	);
 
 }

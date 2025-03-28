@@ -7,11 +7,11 @@
 
 namespace CardanoPress\Foundation;
 
+use CardanoPress\Dependencies\Psr\Log\LoggerInterface;
 use CardanoPress\Dependencies\ThemePlate\Logger;
 use CardanoPress\Interfaces\ApplicationInterface;
 use CardanoPress\Interfaces\HookInterface;
 use CardanoPress\SharedBase;
-use Psr\Log\LoggerInterface;
 
 abstract class AbstractApplication extends SharedBase implements ApplicationInterface, HookInterface
 {
@@ -26,7 +26,7 @@ abstract class AbstractApplication extends SharedBase implements ApplicationInte
         }
 
         $this->pluginFile = $pluginFile;
-        $this->data = get_plugin_data($pluginFile);
+        $this->data = get_plugin_data($pluginFile, false, false);
         $this->logger = new Logger('cardanopress-logs');
 
         $this->initialize();
@@ -44,6 +44,14 @@ abstract class AbstractApplication extends SharedBase implements ApplicationInte
 
     public function logger(string $channel): LoggerInterface
     {
-        return $this->logger->channel($channel);
+        if (! function_exists('wp_hash')) {
+            require_once ABSPATH . 'wp-includes/pluggable.php';
+        }
+
+        $salt = wp_salt('secure_auth');
+        $data = $channel . '_' . gmdate('Y-m-d');
+        $name = hash_hmac('sha256', $data, $salt);
+
+        return $this->logger->channel($name);
     }
 }

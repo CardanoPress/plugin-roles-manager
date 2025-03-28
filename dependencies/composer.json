@@ -34,13 +34,11 @@
     }
   },
   "scripts": {
-    "post-install-cmd": [
+    "action-prefix": [
       "../vendor/bin/mozart compose",
       "composer dump-autoload --classmap-authoritative"
     ],
-    "post-update-cmd": [
-      "../vendor/bin/mozart compose",
-      "composer dump-autoload --classmap-authoritative"
-    ]
+    "post-install-cmd": "@action-prefix",
+    "post-update-cmd": "@action-prefix"
   }
 }

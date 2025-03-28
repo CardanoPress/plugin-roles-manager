@@ -65,6 +65,7 @@ trait Noticeable
                     type: 'POST',
                     url: ajaxurl,
                     data: {
+                        _wpnonce: '<?php echo wp_create_nonce('cardanopress_dismiss_notice'); ?>',
                         action: 'cardanopress_dismiss_notice',
                         name: jQuery(this).parent().attr('id')
                     }
@@ -80,6 +81,12 @@ trait Noticeable
 
     public function dismissNoticeAction()
     {
+        check_ajax_referer('cardanopress_dismiss_notice');
+
+        if (empty($_POST['name'])) {
+            wp_die();
+        }
+
         $name = sanitize_text_field($_POST['name']);
         $expire = time() + DAY_IN_SECONDS;
         $secure = is_ssl();

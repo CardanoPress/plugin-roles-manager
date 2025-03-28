@@ -1,12 +1,15 @@
 {
   "config": {
+    "platform": {
+      "php": "7.4"
+    },
     "optimize-autoloader": true,
     "sort-packages": true
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "php": "^7.4|^8.0",
+    "php": "^7.4|^8.2",
     "ext-json": "*",
     "guzzlehttp/guzzle": "^7.5",
     "themeplate/cache": "^2.6",
@@ -31,17 +34,14 @@
     }
   },
   "scripts": {
-    "post-install-cmd": [
+    "action-prefix": [
       "rm -rf assets ThemePlate/assets",
       "mv vendor/themeplate/core/assets .",
       "mozart compose",
-      "mv assets ThemePlate"
+      "mv assets ThemePlate",
+      "composer -d .. run index.php"
     ],
-    "post-update-cmd": [
-      "rm -rf assets ThemePlate/assets",
-      "mv vendor/themeplate/core/assets .",
-      "mozart compose",
-      "mv assets ThemePlate"
-    ]
+    "post-install-cmd": "@action-prefix",
+    "post-update-cmd": "@action-prefix"
   }
 }

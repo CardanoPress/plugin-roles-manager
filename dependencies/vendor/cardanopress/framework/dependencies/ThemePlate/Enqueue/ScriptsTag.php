@@ -18,8 +18,11 @@ class ScriptsTag extends LoaderTag {
 		'async',
 		'defer',
 		'nomodule',
-		'nonce',
 		'src',
+		'type',
+
+		// deprecated
+		'language',
 	);
 
 }
