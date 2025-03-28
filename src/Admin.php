@@ -19,14 +19,11 @@ class Admin extends AbstractAdmin
 
     public function setupHooks(): void
     {
-        add_action('plugins_loaded', function () {
+        add_action('init', function () {
             $this->settingsPage('CardanoPress - Roles Manager', [
                 'parent' => Application::getInstance()->isReady() ? 'cardanopress' : '',
                 'menu_title' => 'Roles Manager',
             ]);
-        });
-
-        add_action('init', function () {
             $this->perAttributeFields();
             $this->perQuantityFields();
             $this->stakeAddressFields();
